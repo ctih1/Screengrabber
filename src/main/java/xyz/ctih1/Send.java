@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.nio.file.Files;
+import java.util.Objects;
 
 public class Send implements Runnable{
     static String serverAddress = LaunchTask.SERVER_IP;
@@ -23,7 +24,7 @@ public class Send implements Runnable{
                 con.setDoOutput(true);
                 OutputStream out = con.getOutputStream();
                 DataOutputStream image = new DataOutputStream(out);
-                byte[] fileContents = Files.readAllBytes(Screenshot.getPath());
+                byte[] fileContents = Files.readAllBytes(Objects.requireNonNull(Screenshot.getPath()));
                 image.write(fileContents, 0, fileContents.length);
                 con.getResponseCode();
                 con.disconnect();

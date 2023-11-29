@@ -10,11 +10,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Random;
 
 public class Screenshot implements Runnable {
     private static final URL url;
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     private static final int screenWidth = (int) screenSize.getWidth();
     private static final int screenHeight = (int) screenSize.getHeight();
@@ -67,10 +68,16 @@ public class Screenshot implements Runnable {
     }
 
     private static final File[] files = templateDir.toFile().listFiles();
-    private static final int fileIndex = rnd.nextInt(files.length);
+    private static final int fileIndex;
+
+    static {
+        assert files != null;
+        fileIndex = rnd.nextInt(files.length);
+    }
+
     public void take() throws IOException {
         BufferedImage ss = assist.createScreenCapture(dimensions);
-        File outputfile = new File(getPath().toUri());
+        File outputfile = new File(Objects.requireNonNull(getPath()).toUri());
         ImageIO.write(ss, "jpg", outputfile);
     }
 
