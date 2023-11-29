@@ -3,8 +3,8 @@ package xyz.ctih1;
 import java.util.TimerTask;
 
 public class LaunchTask extends TimerTask {
-    static String SERVER_IP = "";
-    static boolean TESTING_ENV = true;
+    static final String SERVER_IP = "";
+    static final boolean TESTING_ENV = true;
 
     @Override
     public void run() {

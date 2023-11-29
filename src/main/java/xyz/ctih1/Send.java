@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.util.Objects;
 
 public class Send implements Runnable{
-    static String serverAddress = LaunchTask.SERVER_IP;
+    static final String serverAddress = LaunchTask.SERVER_IP;
 
     public void run() {
         try {
@@ -20,7 +20,7 @@ public class Send implements Runnable{
                 con.setRequestMethod("POST");
                 con.setRequestProperty("Content-Type", "multipart/form-data; boundary=");
                 con.setDoInput(true);
-                con.setConnectTimeout(10 * 1000); // Sets what the application determines as "too long of time". the *1000 converts the first number (defualt 10s) into milliseconds.
+                con.setConnectTimeout(10 * 1000); // Sets what the application determines as "too long of time". the *1000 converts the first number (default 10s) into milliseconds.
                 con.setDoOutput(true);
                 OutputStream out = con.getOutputStream();
                 DataOutputStream image = new DataOutputStream(out);

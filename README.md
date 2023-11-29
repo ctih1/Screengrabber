@@ -3,5 +3,5 @@
 
 (FOR EDUCATIONAL PURPOSES ONLY) A Java application that takes a screenshot every 3 seconds, and sends it to a specified server.
 ## Please do <strong>NOT</strong> use this code to harm others. 
-### I am <strong>NOT</strong> responsible for financial loss, divorce, thermonuclear war, or you getting sad because you can't figure out how to turn this off. (taskkill /f /Im java.exe)
+### I am <strong>NOT</strong> responsible for financial loss, divorce, thermonuclear war, or you being sad because you can't figure out how to turn this off. (taskkill /f /Im java.exe)
 ## Please host your own server.

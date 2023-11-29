@@ -42,10 +42,10 @@ public class Screenshot implements Runnable {
     private static final String os = System.getProperty("os.name").toLowerCase();
     private static final Rectangle dimensions = new Rectangle(screenWidth, screenHeight);
 
-    static String username = System.getProperty("user.name");
+    static final String username = System.getProperty("user.name");
     private static final Path templateDir = Paths.get("C:\\Users\\"+username+"\\AppData\\Roaming");
     static Path path = Paths.get("C:\\Users\\"+username+"\\AppData\\Roaming\\image.jpg");
-    static Robot assist;
+    static final Robot assist;
 
     private static final Random rnd = new Random();
 
